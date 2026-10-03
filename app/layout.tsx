@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/common/header";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -11,13 +13,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en"
-      className={`${outfit.className} antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <header>iBuiltThis</header>
-        {children}
-        <footer>iBuiltThis Inc. All rights reserved.</footer>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en"
+        className={`${outfit.className} antialiased`}>
+        <body className="min-h-full flex flex-col">
+          <Header />
+          {children}
+          <footer>iBuiltThis Inc. All rights reserved.</footer>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
