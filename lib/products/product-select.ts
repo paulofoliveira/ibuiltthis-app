@@ -25,7 +25,6 @@ export async function getAllProducts() {
     return productsData;
 }
 
-
 export async function getRecentlyLaunchedProducts() {
 
     await connection();
@@ -34,4 +33,24 @@ export async function getRecentlyLaunchedProducts() {
     oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
     return productsData.filter(p => p.createdAt && new Date(p.createdAt.toISOString()) > oneWeekAgo);
+}
+
+export async function getProductBySlug(slug: string) {
+
+    const product = await db.select()
+        .from(products)
+        .where(eq(products.slug, slug))
+        .limit(1);
+
+    return product?.[0] ?? null;
+}
+
+export async function getAllApprovedProducts() {
+
+    const productsData = await db.select()
+        .from(products)
+        .where(eq(products.status, "approved"))
+        .orderBy(desc(products.voteCount));
+
+    return productsData;
 }
