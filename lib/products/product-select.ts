@@ -11,27 +11,13 @@ export async function getFeaturedProducts() {
         .orderBy(desc(products.voteCount));
 
     return productsData;
-
 }
 
 export async function getRecentlyLaunchedProducts() {
 
-    return [
-        {
-            id: 1,
-            name: "ParityKit",
-            description: "A toolkit for creating parity products",
-            tags: ["SaaS", "Pricing", "Global"],
-            votes: 615,
-            isFeatured: true
-        },
-        {
-            id: 2,
-            name: "Modern Full Stack Next.js Course",
-            description: "Learn to build ",
-            tags: ["SaaS", "Pricing", "Global"],
-            votes: 615,
-            isFeatured: true
-        }
-    ];
+    const productsData = await getFeaturedProducts();
+    const oneWeekAgo = new Date();
+    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+    return productsData.filter(p => p.createdAt && new Date(p.createdAt.toISOString()) > oneWeekAgo);
 }
