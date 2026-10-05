@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
+import { Show, SignInButton, SignUpButton } from "@clerk/nextjs";
 import { CompassIcon, HomeIcon, LoaderIcon, SparkleIcon, SparklesIcon } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -45,22 +45,21 @@ export default function Header() {
                                     <LoaderIcon className="size-4 animate-spin" />
                                 </div>
                             }>
-                            <SignedOut>
+                            <Show when="signed-out">
                                 <SignInButton />
                                 <SignUpButton>
                                     <Button>Sign Up</Button>
                                 </SignUpButton>
-                            </SignedOut>
-                            <SignedIn>
+                            </Show>
+                            <Show when="signed-in">
                                 <Button asChild>
                                     <Link href="/submit">
                                         <SparklesIcon className="size-4" />
                                         Submit Project
                                     </Link>
                                 </Button>
-
                                 <CustomUserButton />
-                            </SignedIn>
+                            </Show>
                         </Suspense>
                     </div>
                 </div>
