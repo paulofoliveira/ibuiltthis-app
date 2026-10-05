@@ -3,8 +3,12 @@ import { StarIcon } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 import VotingButtons from "./voting-buttons";
+import { products } from "@/db/schema";
+import { InferSelectModel } from "drizzle-orm";
 
-export default function ProductCard({ product }: { product: any }) {
+type Product = InferSelectModel<typeof products>;
+
+export default function ProductCard({ product }: { product: Product }) {
     const hasVoted = false;
     return (
         <Link href={`/products/${product.slug}`}>
@@ -35,7 +39,7 @@ export default function ProductCard({ product }: { product: any }) {
                 </CardHeader>
                 <CardFooter>
                     <div className="flex items-center gap-2">
-                        {product.tags?.map((tag) => (
+                        {product.tags?.map(tag => (
                             <Badge variant="secondary" key={tag}>
                                 {tag}
                             </Badge>
