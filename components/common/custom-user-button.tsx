@@ -12,8 +12,7 @@ export default function CustomUserButton() {
                 url="organization">
                 <div className="p-4">
                     <h2>Manage Organization</h2>
-                    <OrganizationSwitcher
-                        hidePersonal={true}
+                    <OrganizationSwitcher hidePersonal={true}
                         afterCreateOrganizationUrl={"/submit"}
                         afterSelectPersonalUrl={"/submit"}
                         appearance={{
@@ -24,8 +23,7 @@ export default function CustomUserButton() {
                     />
                 </div>
             </UserButton.UserProfilePage>
-            <UserButton.UserProfilePage
-                label="Admin"
+            <UserButton.UserProfilePage label="Admin"
                 labelIcon={<Building2Icon className="size-4" />}
                 url="admin">
                 <div className="p-4">
