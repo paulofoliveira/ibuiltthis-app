@@ -29,7 +29,7 @@ export default function AdminActions({
                         onClick={handleApprove}
                     >
                         <CheckCircleIcon className="size-4" />
-                        Approve
+                        Aprovar
                     </Button>
                     <Button
                         variant="destructive"
@@ -37,7 +37,7 @@ export default function AdminActions({
                         onClick={handleReject}
                     >
                         <XCircleIcon className="size-4" />
-                        Reject
+                        Rejeitar
                     </Button>
                 </div>
             )}

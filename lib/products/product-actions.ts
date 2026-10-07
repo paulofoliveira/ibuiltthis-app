@@ -19,7 +19,7 @@ export const upvoteProductAction = async (productId: number) => {
             console.log("User not signed in");
             return {
                 success: false,
-                message: "You must be signed in to submit a product",
+                message: "Você precisa entrar na sua conta para enviar um produto",
             };
         }
 
@@ -27,7 +27,7 @@ export const upvoteProductAction = async (productId: number) => {
             console.log("User not a member of an organization");
             return {
                 success: false,
-                message: "You must be a member of an organization to submit a product",
+                message: "Você precisa fazer parte de uma organização para enviar um produto",
             };
         }
 
@@ -41,13 +41,13 @@ export const upvoteProductAction = async (productId: number) => {
 
         return {
             success: true,
-            message: "Product upvoted successfully",
+            message: "Voto positivo registrado com sucesso",
         };
     } catch (error) {
         console.error(error);
         return {
             success: false,
-            message: "Failed to upvote product",
+            message: "Não foi possível registrar o voto positivo",
             voteCount: 0,
         };
     }
@@ -62,7 +62,7 @@ export const downvoteProductAction = async (productId: number) => {
             console.log("User not signed in");
             return {
                 success: false,
-                message: "You must be signed in to submit a product",
+                message: "Você precisa entrar na sua conta para enviar um produto",
             };
         }
 
@@ -70,7 +70,7 @@ export const downvoteProductAction = async (productId: number) => {
             console.log("User not a member of an organization");
             return {
                 success: false,
-                message: "You must be a member of an organization to submit a product",
+                message: "Você precisa fazer parte de uma organização para enviar um produto",
             };
         }
 
@@ -84,13 +84,13 @@ export const downvoteProductAction = async (productId: number) => {
 
         return {
             success: true,
-            message: "Product downvoted successfully",
+            message: "Voto negativo registrado com sucesso",
         };
     } catch (error) {
         console.error(error);
         return {
             success: false,
-            message: "Failed to downvote product",
+            message: "Não foi possível registrar o voto negativo",
             voteCount: 0,
         };
     }
@@ -106,7 +106,7 @@ export const addProductAction = async (
         if (!userId) {
             return {
                 success: false,
-                message: "You must be signed in to submit a product",
+                message: "Você precisa entrar na sua conta para enviar um produto",
                 errors: undefined,
             };
         }
@@ -114,7 +114,7 @@ export const addProductAction = async (
         if (!orgId) {
             return {
                 success: false,
-                message: "You must be a member of an organization to submit a product",
+                message: "Você precisa fazer parte de uma organização para enviar um produto",
                 errors: undefined,
             };
         }
@@ -132,7 +132,7 @@ export const addProductAction = async (
             return {
                 success: false,
                 errors: validatedData.error.flatten().fieldErrors,
-                message: "Invalid data",
+                message: "Dados inválidos",
             };
         }
         const { name, slug, tagline, description, websiteUrl, tags } = validatedData.data;
@@ -155,7 +155,7 @@ export const addProductAction = async (
 
         return {
             success: true,
-            message: "Product submitted successfully! It will be reviewed shortly.",
+            message: "Produto enviado com sucesso! Ele será revisado em breve.",
             errors: undefined,
         };
     } catch (error) {
@@ -165,14 +165,14 @@ export const addProductAction = async (
             return {
                 success: false,
                 errors: error.flatten().fieldErrors,
-                message: "Validation failed. Please check the form.",
+                message: "Não foi possível validar os dados. Confira o formulário.",
             };
         }
 
         return {
             success: false,
             errors: undefined,
-            message: "Failed to submit product",
+            message: "Não foi possível enviar o produto",
         };
     }
 };

@@ -49,7 +49,7 @@ export default function ProductExplorer({ products }: { products: ProductType[];
                 <div className="flex-1 relative">
                     <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
                     <Input type="text"
-                        placeholder="Search products..."
+                        placeholder="Buscar produtos..."
                         className="pl-10"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)} />
@@ -58,19 +58,19 @@ export default function ProductExplorer({ products }: { products: ProductType[];
                     <Button variant={sortBy === "trending" ? "default" : "outline"}
                         onClick={() => setSortBy("trending")}>
                         <TrendingUpIcon className="size-4" />
-                        Trending
+                        Em alta
                     </Button>
                     <Button variant={sortBy === "recent" ? "default" : "outline"}
                         onClick={() => setSortBy("recent")}>
                         <ClockIcon className="size-4" />
-                        Recent
+                        Recentes
                     </Button>
                 </div>
             </div>
 
             <div className="mb-6">
                 <p className="text-sm text-muted-foreground">
-                    Showing {filteredProducts.length} products
+                    Exibindo {filteredProducts.length} {filteredProducts.length === 1 ? "produto" : "produtos"}
                 </p>
             </div>
 

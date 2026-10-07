@@ -23,7 +23,7 @@ export default function ProductCard({ product }: { product: Product }) {
                                 {product.voteCount > 100 && (
                                     <Badge className="gap-1 bg-primary text-primary-foreground">
                                         <StarIcon className="size-3 fill-current" />
-                                        Featured
+                                        Destaque
                                     </Badge>
                                 )}
                             </div>

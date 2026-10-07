@@ -28,13 +28,13 @@ export default function Header() {
                             href="/"
                             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:bg-muted/50">
                             <HomeIcon className="size-4" />
-                            <span>Home</span>
+                            <span>Início</span>
                         </Link>
                         <Link
                             href="/explore"
                             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hover:bg-muted/50">
                             <CompassIcon className="size-4" />
-                            <span>Explore</span>
+                            <span>Explorar</span>
                         </Link>
                     </nav>
 
@@ -46,16 +46,18 @@ export default function Header() {
                                 </div>
                             }>
                             <Show when="signed-out">
-                                <SignInButton />
+                                <SignInButton>
+                                    <button type="button">Entrar</button>
+                                </SignInButton>
                                 <SignUpButton>
-                                    <Button>Sign Up</Button>
+                                    <Button>Criar conta</Button>
                                 </SignUpButton>
                             </Show>
                             <Show when="signed-in">
                                 <Button asChild>
                                     <Link href="/submit">
                                         <SparklesIcon className="size-4" />
-                                        Submit Project
+                                        Enviar projeto
                                     </Link>
                                 </Button>
                                 <CustomUserButton />

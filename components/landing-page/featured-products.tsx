@@ -13,13 +13,13 @@ export default async function FeaturedProducts() {
             <div className="wrapper">
                 <div className="flex items-center justify-between mb-8">
                     <SectionHeader
-                        title="Featured Today"
+                        title="Destaques de hoje"
                         icon={StarIcon}
-                        description="Top picks from our community this week"
+                        description="Os melhores projetos da nossa comunidade nesta semana"
                     />
                     <Button variant="outline" asChild className="hidden sm:flex">
                         <Link href="/explore">
-                            View All <ArrowUpRightIcon className="size-4" />
+                            Ver todos <ArrowUpRightIcon className="size-4" />
                         </Link>
                     </Button>
                 </div>

@@ -33,7 +33,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
             <div className="wrapper">
                 <Link href="/explore"
                     className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors">
-                    <ArrowLeftIcon className="size-4" /> Back to Explore
+                    <ArrowLeftIcon className="size-4" /> Voltar para explorar
                 </Link>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -57,26 +57,26 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
                             </div>
                         </div>
                         <div className="prose prose-neutral dark:prose-invert max-w-none">
-                            <h2 className="text-xl font-semibold mb-4">About</h2>
+                            <h2 className="text-xl font-semibold mb-4">Sobre</h2>
                             <p className="text-muted-foreground leading-relaxed">
                                 {description}
                             </p>
                         </div>
 
                         <div className="border rounded-lg p-6 bg-primary/10">
-                            <h2 className="text-lg font-semibold mb-4">Product Details</h2>
+                            <h2 className="text-lg font-semibold mb-4">Detalhes do produto</h2>
 
                             <div className="space-y-3">
                                 {[
                                     {
-                                        label: "Launched:",
+                                        label: "Lançamento:",
                                         value: new Date(
                                             product.createdAt?.toISOString() ?? ""
-                                        ).toLocaleDateString(),
+                                        ).toLocaleDateString("pt-BR"),
                                         icon: CalendarIcon,
                                     },
                                     {
-                                        label: "Submitted by:",
+                                        label: "Enviado por:",
                                         value: product.submittedBy,
                                         icon: UserIcon,
                                     },
@@ -95,14 +95,14 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
                             <div className="border rounded-lg p-6 bg-background">
                                 <div className="text-center mb-6">
                                     <p className="text-sm text-muted-foreground mb-2">
-                                        Support this product
+                                        Apoie este produto
                                     </p>
                                     <VotingButtons productId={product.id} voteCount={voteCount} />
                                 </div>
                                 {voteCount > 100 && (
                                     <div className="pt-6 border-t">
                                         <Badge className="w-full justify-center py-2">
-                                            Featured Product
+                                            Produto em destaque
                                         </Badge>
                                     </div>
                                 )}
@@ -114,7 +114,7 @@ export default async function Product({ params }: { params: Promise<{ slug: stri
                                     <a href={websiteUrl}
                                         target="_blank"
                                         rel="noopener noreferrer">
-                                        Visit Website <ExternalLinkIcon className="size-4 ml-2" />
+                                        Visitar site <ExternalLinkIcon className="size-4 ml-2" />
                                     </a>
                                 </Button>
                             )}

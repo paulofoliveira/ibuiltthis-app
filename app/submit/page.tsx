@@ -8,9 +8,9 @@ export default function SubmitPage() {
             <div className="wrapper">
                 <div className="mb-12">
                     <SectionHeader
-                        title="Submit Your Product"
+                        title="Envie seu produto"
                         icon={SparklesIcon}
-                        description="Share your creation with the community. Your submission will be reviewed before going live."
+                        description="Compartilhe sua criação com a comunidade. Seu produto será revisado antes de ser publicado."
                     />
                 </div>
                 <div className="max-w-2xl mx-auto">

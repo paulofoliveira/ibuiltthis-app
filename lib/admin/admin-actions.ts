@@ -19,13 +19,13 @@ export const approveProductAction = async (productId: ProductType["id"]) => {
 
         return {
             success: true,
-            message: "Product approved successfully",
+            message: "Produto aprovado com sucesso",
         };
     } catch (error) {
         console.error(error);
         return {
             success: false,
-            message: "Failed to approve product",
+            message: "Não foi possível aprovar o produto",
         };
     }
 };
@@ -43,13 +43,13 @@ export const rejectProductAction = async (productId: ProductType["id"]) => {
 
         return {
             success: true,
-            message: "Product rejected successfully",
+            message: "Produto rejeitado com sucesso",
         };
     } catch (error) {
         console.error(error);
         return {
             success: false,
-            message: "Failed to reject product",
+            message: "Não foi possível rejeitar o produto",
         };
     }
 };

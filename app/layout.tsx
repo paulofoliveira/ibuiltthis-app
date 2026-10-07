@@ -3,19 +3,20 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations";
 import Footer from "@/components/common/footer";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "iBuiltThis - Share Your Creations, Discover New Launches",
-  description: "A community platform for creators to showcase their apps, AI tools, SaaS products, and creative projects. Authentic launches, real builders, genuine feedback.",
+  title: "iBuiltThis - Compartilhe suas criações, descubra novos lançamentos",
+  description: "Uma comunidade para apresentar seus aplicativos, ferramentas de IA, produtos SaaS e projetos criativos. Lançamentos autênticos, pessoas reais e opiniões sinceras.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <ClerkProvider>
-      <html lang="en"
+    <ClerkProvider localization={ptBR}>
+      <html lang="pt-BR"
         className={`${outfit.className} antialiased`}>
         <body className="min-h-full flex flex-col">
           <Header />

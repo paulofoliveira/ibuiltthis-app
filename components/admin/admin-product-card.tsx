@@ -25,7 +25,7 @@ export default function AdminProductCard({
                             product.status === "rejected" &&
                             "bg-red-500/10 text-red-500 border-red-500"
                         )}>
-                            {product.status}
+                            {product.status === "pending" ? "Pendente" : product.status === "approved" ? "Aprovado" : product.status === "rejected" ? "Rejeitado" : "Sem status"}
                         </Badge>
                     </CardTitle>
                     <CardDescription className="flex flex-col gap-4">
@@ -39,11 +39,11 @@ export default function AdminProductCard({
                         </div>
                         <div className="flex gap-x-4 gap-y-2 text-sm text-muted-foreground">
                             <p>
-                                <span className="font-bold">By:</span> {product.submittedBy}
+                                <span className="font-bold">Por:</span> {product.submittedBy}
                             </p>
                             <p>
                                 {product.createdAt
-                                    ? new Intl.DateTimeFormat("en-US", {
+                                    ? new Intl.DateTimeFormat("pt-BR", {
                                         year: "numeric",
                                         month: "short",
                                         day: "numeric",
@@ -54,7 +54,7 @@ export default function AdminProductCard({
                                 <a href={product.websiteUrl ?? ""}
                                     target="_blank"
                                     rel="noopener noreferrer">
-                                    Visit Website
+                                    Visitar site
                                 </a>
                             </p>
                         </div>
@@ -62,7 +62,7 @@ export default function AdminProductCard({
                     <CardFooter>
                         <Button variant="outline">
                             <Trash2Icon className="size-4" />
-                            Delete
+                            Excluir
                         </Button>
                     </CardFooter>
                 </div>

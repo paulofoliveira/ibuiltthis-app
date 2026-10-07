@@ -7,11 +7,11 @@ import Link from "next/link";
 export default function CustomUserButton() {
     return (
         <UserButton>
-            <UserButton.UserProfilePage label="Organizations"
+            <UserButton.UserProfilePage label="Organizações"
                 labelIcon={<BuildingIcon className="size-4" />}
                 url="organization">
                 <div className="p-4">
-                    <h2>Manage Organization</h2>
+                    <h2>Gerenciar organização</h2>
                     <OrganizationSwitcher hidePersonal={true}
                         afterCreateOrganizationUrl={"/submit"}
                         afterSelectPersonalUrl={"/submit"}
@@ -23,14 +23,14 @@ export default function CustomUserButton() {
                     />
                 </div>
             </UserButton.UserProfilePage>
-            <UserButton.UserProfilePage label="Admin"
+            <UserButton.UserProfilePage label="Administração"
                 labelIcon={<Building2Icon className="size-4" />}
                 url="admin">
                 <div className="p-4">
-                    <h2>Admin Panel</h2>
+                    <h2>Painel administrativo</h2>
                     <Link href="/admin" className="w-full justify-start">
                         <Button size="default" className="w-full justify-start">
-                            Go to Admin Panel
+                            Ir para o painel administrativo
                         </Button>
                     </Link>
                 </div>

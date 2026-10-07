@@ -18,17 +18,17 @@ export default function StatsCard({
             color: "bg-primary/10",
         },
         {
-            label: "Pending",
+            label: "Pendentes",
             count: pending,
             color: "bg-yellow-500/10",
         },
         {
-            label: "Approved",
+            label: "Aprovados",
             count: approved,
             color: "bg-green-500/10",
         },
         {
-            label: "Rejected",
+            label: "Rejeitados",
             count: rejected,
             color: "bg-red-500/10",
         },

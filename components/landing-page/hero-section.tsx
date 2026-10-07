@@ -21,7 +21,7 @@ const LiveBadge = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <span className="text-muted-foreground">
-                Join thousands of creators sharing their work
+                Junte-se a milhares de criadores que compartilham seus projetos
             </span>
         </Badge>
     );
@@ -30,19 +30,19 @@ const LiveBadge = () => {
 const statsData = [
     {
         icon: RocketIcon,
-        value: "2.5K+",
-        label: "Projects Shared",
+        value: "2,5 mil+",
+        label: "Projetos compartilhados",
     },
     {
         icon: UsersIcon,
-        value: "10K+",
-        label: "Active Creators",
+        value: "10 mil+",
+        label: "Criadores ativos",
         hasBorder: true,
     },
     {
         icon: EyeIcon,
-        value: "50K+",
-        label: "Monthly Visitors",
+        value: "50 mil+",
+        label: "Visitantes por mês",
     },
 ];
 
@@ -53,18 +53,18 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center justify-center lg:py-24 py-12 text-center">
                     <LiveBadge />
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-5xl">
-                        Share What You&apos;ve Built, Discover What&apos;s Launching
+                        Compartilhe suas criações, descubra novos lançamentos
                     </h1>
                     <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-                        A community platform for creators to showcase their apps, AI tools,
-                        SaaS products, and creative projects. Authentic launches, real
-                        builders, genuine feedback.
+                        Uma comunidade para apresentar seus aplicativos, ferramentas de IA,
+                        produtos SaaS e projetos criativos. Lançamentos autênticos,
+                        pessoas reais e opiniões sinceras.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mb-16">
                         <Button asChild size="lg" className="text-base px-8 shadow-lg">
                             <Link href="/submit">
                                 <SparklesIcon className="size-5" />
-                                Share Your Project
+                                Compartilhe seu projeto
                             </Link>
                         </Button>
                         <Button
@@ -74,7 +74,7 @@ export default function HeroSection() {
                             variant="secondary"
                         >
                             <Link href="/explore">
-                                Explore Projects <ArrowRightIcon className="size-5" />
+                                Explorar projetos <ArrowRightIcon className="size-5" />
                             </Link>
                         </Button>
                     </div>

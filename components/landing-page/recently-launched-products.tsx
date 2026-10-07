@@ -11,9 +11,9 @@ export default async function RecentlyLaunchedProducts() {
     return (
         <section className="py-20">
             <div className="wrapper space-y-12">
-                <SectionHeader title="Recently Launched"
+                <SectionHeader title="Lançamentos recentes"
                     icon={RocketIcon}
-                    description="Discover the latest products from our community" />
+                    description="Descubra os produtos mais recentes da nossa comunidade" />
                 {recentlyLaunchedProducts.length > 0 ? (
                     <div className="grid-wrapper">
                         {recentlyLaunchedProducts.map((product) => (
@@ -21,7 +21,7 @@ export default async function RecentlyLaunchedProducts() {
                         ))}
                     </div>
                 ) : (
-                    <EmptyState message="No products launched in the last week. Check back soon for new launches." />
+                    <EmptyState message="Nenhum produto foi lançado na última semana. Volte em breve para conferir as novidades." />
                 )}
             </div>
         </section>

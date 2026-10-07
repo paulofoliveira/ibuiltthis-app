@@ -40,57 +40,57 @@ export default function ProductSubmitForm() {
                     {message}
                 </div>
             )}
-            <FormField label="Product Name"
+            <FormField label="Nome do produto"
                 name="name"
                 id="name"
-                placeholder="My Awesome Product"
+                placeholder="Meu produto incrível"
                 required
                 onChange={() => { }}
                 error={getFieldErrors("name")} />
 
-            <FormField label="Slug"
+            <FormField label="Endereço do produto"
                 name="slug"
                 id="slug"
-                placeholder="my-awesome-product"
+                placeholder="meu-produto-incrivel"
                 required
                 onChange={() => { }}
-                helperText="URL-friendly version of your product name"
+                helperText="Versão do nome do produto para usar na URL"
                 error={getFieldErrors("slug")} />
 
-            <FormField label="Tagline"
+            <FormField label="Descrição curta"
                 name="tagline"
                 id="tagline"
-                placeholder="A brief, catchy description"
+                placeholder="Uma descrição breve e atraente"
                 required
                 onChange={() => { }}
                 error={getFieldErrors("tagline")} />
 
-            <FormField label="Description"
+            <FormField label="Descrição"
                 name="description"
                 id="description"
-                placeholder="Tell us more about your product..."
+                placeholder="Conte mais sobre seu produto..."
                 required
                 onChange={() => { }}
                 error={getFieldErrors("description")}
                 textarea />
 
-            <FormField label="Website URL"
+            <FormField label="URL do site"
                 name="websiteUrl"
                 id="websiteUrl"
-                placeholder="https://yourproduct.com"
+                placeholder="https://seuproduto.com"
                 required
                 onChange={() => { }}
                 error={getFieldErrors("websiteUrl")}
-                helperText="Enter your product's website or landing page" />
+                helperText="Informe o site ou a página de apresentação do seu produto" />
 
-            <FormField label="Tags"
+            <FormField label="Categorias"
                 name="tags"
                 id="tags"
-                placeholder="AI, Productivity, SaaS"
+                placeholder="IA, Produtividade, SaaS"
                 required
                 onChange={() => { }}
                 error={getFieldErrors("tags")}
-                helperText="Comma-separated tags (e.g., AI, SaaS, Productivity)" />
+                helperText="Categorias separadas por vírgulas (ex.: IA, SaaS, Produtividade)" />
 
             <Button type="submit" size="lg" className="w-full">
                 {isPending ? (
@@ -98,7 +98,7 @@ export default function ProductSubmitForm() {
                 ) : (
                     <>
                         <SparklesIcon className="size-4" />
-                        Submit Product
+                        Enviar produto
                     </>
                 )}
             </Button>

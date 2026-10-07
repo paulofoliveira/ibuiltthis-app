@@ -34,9 +34,9 @@ export default async function AdminPage() {
         <div className="py-20">
             <div className="wrapper">
                 <div className="mb-12">
-                    <SectionHeader title="Product Admin"
+                    <SectionHeader title="Administração de produtos"
                         icon={ShieldIcon}
-                        description="Review and manage submitted products" />
+                        description="Revise e gerencie os produtos enviados" />
                 </div>
                 <StatsCard approved={approvedProducts.length}
                     pending={pendingProducts.length}
@@ -46,12 +46,12 @@ export default async function AdminPage() {
                 <section className="my-12">
                     <div className="section-header-with-count">
                         <h2 className="text-2xl font-bold">
-                            Pending Products ({pendingProducts.length})
+                            Produtos pendentes ({pendingProducts.length})
                         </h2>
                     </div>
                     <div className="space-y-4">
                         {pendingProducts.length === 0 && (
-                            <EmptyState message="No pending products to review"
+                            <EmptyState message="Nenhum produto pendente de revisão"
                                 icon={InboxIcon} />
                         )}
                         {pendingProducts.map((product) => (
@@ -62,7 +62,7 @@ export default async function AdminPage() {
 
                 <section className="my-12">
                     <div className="section-header-with-count">
-                        <h2 className="text-2xl font-bold">All Products</h2>
+                        <h2 className="text-2xl font-bold">Todos os produtos</h2>
                     </div>
                     <div className="space-y-4">
                         {allProducts.map((product) => (
