@@ -9,7 +9,7 @@ import { ArrowLeftIcon, CalendarIcon, ExternalLinkIcon, StarIcon, UserIcon } fro
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export const generateStaticParxams = async () => {
+export const generateStaticParams = async () => {
     const products = await getFeaturedProducts();
     return products.map((product) => ({
         slug: product.slug.toString(),
