@@ -9,14 +9,14 @@ import { redirect } from "next/navigation";
 
 export default async function AdminPage() {
 
-    const { userId } = await auth();
+    const { userId, redirectToSignIn } = await auth();
 
     if (!userId) {
-        redirect("/sign-in");
+        return redirectToSignIn({ returnBackUrl: "/admin" });
     }
 
     const response = await clerkClient();
-    const user = await response.users.getUser(userId!);
+    const user = await response.users.getUser(userId);
 
     const metadata = user.publicMetadata;
     const isAdmin = metadata?.isAdmin ?? false;
